@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car boutique.fr{% endblock %}
+
+{% block body %}
+    <div class="corp">
+        <div class="Banniere-Actue">
+            <div class="banner-content">
+                <h2 class="Actu"> ACTUALITÉ </h2>
+                <p>Le monde de l’automobile evolue très vite, tenez-vous informer</p>
+                <button class="Informations"><a style="color: #FFFFFF" href="https://www.auto-moto.com/">Information</a>
+                </button>
+            </div>
+        </div>
+        <div class="Main">
+            <div class="container">
+                <div class="Dernire-annonce">
+                    <h2>Dernière Annonces</h2>
+                    <div class="row">
+                        {% for articlevoiture in articlevoitures %}
+                            <div class="col hidden" style="border-radius: 10px;">
+                                <div class="col-4">
+                                    <div class="card">
+                                        <div class="imgbox">
+                                            <img class="fa-annonce"
+                                                 src="{{ vich_uploader_asset(articlevoiture, 'imageFile') }}"
+                                                 alt="tof-annonce">
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="Title-card">{{ articlevoiture.marque }}</h3>
+                                            <h3 class="Title-card"> {{ articlevoiture.modele }} </h3>
+                                            <span class="Date">{{ articlevoiture.createdAt | date('d/m/Y') }} à
+                {{ articlevoiture.createdAt | date('H:i') }}</span>
+                                            <a href="{{ path('vente_show', {"id": articlevoiture.id}) }}"> Voir plus</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="All-annonce hidden">
+                    <div class="row Chois-Voit">
+                        <div class="col-6 Img-All-annonce">
+                            <img class="ImgAll" src="img/story.jpg" alt="ImgAnnonce">
+                            <img class="ImgAllAbsol" src="img/multivan.jpg" alt="ImgAnnonce">
+                        </div>
+                        <div class="col-6 Text-all-annonce">
+                            <h5>Trouver votre prochaine voiture</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br>
+                                sed do eiusmod tempor incididunt ut labore.</p>
+
+                            <button type="button" class="btn-All-annonce"><a href="{{ path('liste_Voitures') }}"> Voir
+                                    toute
+                                    les
+                                    annonce
+                                    en ligne
+                                </a></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="Voiture-Perso hidden">
+                    <h5>Chercher la voiture qui vous conviens le mieux</h5>
+                    <div class="row Categorie">
+                        {% for type in types %}
+                            <div class="col hidden"><a href="{{ path('vente_listCat', {"id": type.id}) }}">
+                                    <div class="Cat" style="background-image: url({{ type.image }});">
+                                        <h5 class="title-cat">{{ type.vehiculetype }}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endfor %}
+                        <div class="row">
+                            <div class="col" style="text-align: end; margin-top: 30px; margin-right: 50px;">
+                                <button type="button" class="btn-All-annonce">
+                                    <a href="{{ path('vente_Categorie') }}"> Voir toute nos
+                                        categories</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Newsletter hidden">
+                        <h3> Recever nos mails </h3>
+                        <div class="row">
+                            <div class="col hidden">
+                                <p>Inscrivez-vous pour recevoir de l'inspiration,<br> des mises à
+                                    jour de produits et des offres spéciales de notre équipe.</P>
+                                {{ form_start(formNews) }}
+                                {{ form_widget(formNews.EmailUser) }}
+                                <button type="submit" class="btn-newsletter">S'INSCRIRE</button>
+                                {{ form_end(formNews) }}
+                            </div>
+                            <p class="hidden">Nous ne partagerons jamais vos coordonnées. Consultez notre<br>
+                                <a href="">
+                                    <button type="button" class="btn-All-annonce hidden"> politique de confidentialité</button>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

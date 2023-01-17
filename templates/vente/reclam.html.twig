@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="corp">
+    <div class="Banniere-Actue">
+        <div class="banner-content">
+            <h2 class="Actu"> Reclamation </h2>
+            <p>Reclamation et message utilisateur</p>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            {% for reclam in reclams %}
+            <div class="col carte-reclam">
+                <div class="row carte">
+                    <div class="col carte-left">
+                        <span class="reclamLi">Titre :</span><br> {{ reclam.title }}<br>
+                        <span class="reclamLi">Object :</span><br> {{ reclam.object }}<br>
+                        <p class="carte-description"><span class="reclamLi">Contenue :</span><br> {{ reclam.content }} </p>
+                        <p>de :{{ reclam.user.Name }}, {{ reclam.user.LastName }} le {{ reclam.createdAt|date("d/m/Y") }} </p>
+                        <a href="mailto:{{ reclam.user.email }}" class="btn btn-success">Contacter</a>
+                        <a href="{{ path('detelete_reclam', {"id": reclam.id}) }}" class="btn btn-danger">Lu et repondu</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formReclam 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> Contact </h2>
+      <p>Reclamation et message utilisateur</p>
+    </div>
+  </div>
+  <div class="container" style="margin-top: 50px;">
+    {{ form_start(formReclam) }}
+    <div class="form-create">{{ form_row(formReclam.title, {
+            label: 'Titre'
+        }) }}</div>
+
+        <div class="form-create">{{ form_row(formReclam.Object, {
+            label: 'Object'
+        }) }}</div>
+
+        <div class="form-create">{{ form_row(formReclam.content, {
+            label: 'Contenue'
+        }) }}</div>
+      <button type="submit" class="btn btn-success ">Envoyé</button>
+    {{ form_end(formReclam) }}
+
+  </div>
+</div>
+{% endblock %}

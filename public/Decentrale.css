@@ -1,0 +1,1003 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+@font-face {
+    font-family: 'OverpassBold';
+    src: url('/assets/fonts/overpass/1d15d9cb995c657df97159f0bfbe9141/e6dbbcd2f162fd16564f50bfbbbfcb58/OverpassBold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Tout page */
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+}
+
+.col {
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+
+a {
+    text-decoration: none;
+    color: #090E1D;
+}
+
+a:hover {
+    color: #090E1D;
+}
+
+.header-top {
+    margin: 20px;
+}
+
+.Titre {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(9, 14, 29, 0.64);
+    transition: 5ms;
+}
+
+.Titre:hover {
+    color: #090e1da5;
+}
+
+.logo-panier-search {
+    text-align: end;
+    align-self: center;
+}
+
+.material-symbols-outlined {
+    color: #090e1da7;
+    font-variation-settings: 'FILL' 0,
+    'wght' 500,
+    'GRAD' -25,
+    'opsz' 24;
+    transition: 5ms;
+}
+
+.favorite:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.Page-User {
+    text-align: center;
+    color: white;
+    align-self: center;
+}
+
+.logo-pannier-search {
+    text-align: center;
+    width: 100%;
+}
+
+/* Bannière */
+
+.Banniere-Actue {
+    background-color: #090E1D;
+    color: white;
+    align-self: center;
+    background-image: url(img/voitureBan.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.banner-content {
+    padding: 150px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.514);
+    max-width: 100%;
+    height: 100%;
+}
+
+.Informations {
+    background-color: #090E1D;
+    color: white;
+    font-size: large;
+    width: 196.3px;
+    height: 60px;
+    border: none;
+    border-radius: 3px;
+    transition: 0.5s;
+}
+
+.Informations:hover {
+    background-color: #121521a9;
+
+}
+
+.Dernire-annonce {
+    margin-top: 96px;
+}
+
+.Main {
+    margin-top: 50px;
+}
+
+.prix-article {
+    font-size: 20px;
+    color: #090e1d89;
+    font-weight: bold;
+}
+
+.Voiture-Article {
+    color: #090E1D;
+    margin: 0;
+}
+
+.All-annonce {
+    margin-top: 96.5px;
+    border-top: 1px solid #090e1d60;
+    border-bottom: 1px solid #090e1d60;
+}
+
+.Chois-Voit {
+    padding: 96.5px 50px 96px;
+}
+
+.Categorie {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.Img-All-annonce {
+    text-align: center;
+}
+
+.ImgAll {
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+
+.ImgAllAbsol {
+    width: 280px;
+    height: auto;
+    position: absolute;
+    left: 120px;
+    margin-top: 150px;
+    border: 12px solid white;
+}
+
+.Text-all-annonce {
+    align-self: center;
+}
+
+.btn-All-annonce {
+    color: #090e1dbf;
+    background: none;
+    border: none;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.listSite {
+    color: #090E1D;
+    text-align: center;
+    margin: 50px;
+    border: 1px solid #090e1d3b;
+    border-radius: 20px;
+}
+
+.imgListProfil {
+    width: 60%;
+    max-width: 100%;
+}
+
+.imgListannonces {
+    max-width: 100%;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.title-cat {
+    color: #ffffff;
+    font-size: 25.2px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.8px #090E1D;
+}
+
+.Cat {
+    width: 260px;
+    height: 435px;
+    padding-top: 30px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    transition: 1s;
+    color: #090E1D;
+}
+
+.Cat:hover {
+    transform: scale(0.9);
+    opacity: 80%;
+}
+
+.Chercher {
+    width: 360px;
+    height: 450px;
+}
+
+.Voiture-Perso {
+    margin-top: 96px;
+}
+
+.Newsletter {
+    padding-top: 146px;
+    border-top: 1px solid #090e1d60;
+    text-align: center;
+    align-self: center;
+    margin-top: 96px;
+    padding-bottom: 146px;
+}
+
+.email {
+    margin-top: 26px;
+    width: 371.97px;
+    height: 60px;
+    border: 2px solid #090e1d2a;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.btn-newsletter {
+    background-color: #090E1D;
+    color: white;
+    font-weight: bolder;
+    height: 60px;
+    width: 160px;
+    border-radius: 3px;
+}
+
+.footer {
+    margin-top: 50px;
+    background-color: #090E1D;
+    padding: 144px 192px 144px;
+    border-bottom: 1px solid #ffffff10;
+}
+
+.Titre-Footer {
+    color: white;
+    align-self: center;
+    text-align: start;
+}
+
+.footer-title {
+    margin-bottom: 26px;
+}
+
+.social-icon {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.icon-social {
+    margin-top: 50px;
+}
+
+.ulliste {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.liste {
+    font-weight: 400;
+    color: #ffffff86;
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.Copyright {
+    text-align: center;
+}
+
+.Copy {
+    color: #ffffff35;
+    background-color: #090E1D;
+    padding: 24px 192px 37px;
+}
+
+.Banniere-annonce {
+    background-color: white;
+    margin: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.Banniere-annonce-list {
+    background-color: white;
+    margin: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+
+.btn-VoirPlus {
+    align-self: center;
+}
+
+.DisplayNone {
+    display: none;
+}
+
+.LgPhoto {
+    border-radius: 30px;
+    width: 635px;
+    height: auto;
+    border: 5px solid white;
+}
+
+.TopPhoto {
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+    border: 5px solid white;
+}
+
+.PngPhoto {
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+    margin-top: 20px;
+    border: 5px solid white;
+}
+
+.Img-ilustration {
+    margin-top: 100px;
+    margin-right: 10px;
+}
+
+
+.Deux-photo {
+    margin-top: 100px;
+}
+
+.Image-Voiture {
+    width: 100%;
+}
+
+.InfoRapide {
+    color: #2F2F2F;
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.photo-Voiture {
+    background-color: white;
+}
+
+.btn-Achat {
+    margin-top: 10px;
+}
+
+.description-Voiture {
+    margin-top: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.InfoVoiture {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.suggestion {
+    text-align: center;
+}
+
+.Similaire-Photo {
+    width: 50%;
+    height: auto;
+}
+
+.Description {
+    padding: 30px;
+    text-align: center;
+}
+
+.descr-Voiture {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.Api-argus {
+    align-self: center;
+    text-align: center;
+}
+
+.localisation-voiture {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+.Livraison-Recherche {
+    margin-top: 20px;
+}
+
+.Livraison {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.Condition-Livraison {
+    font-size: 12px;
+}
+
+.responsive-ColInfoRapide {
+    margin-top: 20px;
+    display: none;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.Search-filter {
+    padding: 20px;
+}
+
+.select-spec {
+    margin-top: 20px;
+}
+
+.btn-scrol {
+    position: fixed;
+    z-index: 1;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    height: 100%;
+    width: 100%;
+}
+
+#scrollUp {
+    width: 200px;
+    height: auto;
+    position: fixed;
+    bottom: 10px;
+    right: -100px;
+}
+
+.box {
+    text-align: center;
+    margin: 5px;
+    border-right: 1px solid #090e1d32;
+    padding: 10px;
+}
+
+.FAQ {
+    font-size: 20px;
+}
+
+.aprop {
+    margin-top: 100px;
+    color: #090e1daa;
+    font-weight: 500;
+    font-size: large;
+}
+
+.Para-apropo {
+    margin-top: 50px;
+}
+
+.Para-apropo1 {
+    margin-top: 30px;
+}
+
+.over-blanc {
+    transition: 0.5s;
+}
+
+.over-blanc:hover {
+    color: #ffffff;
+}
+
+.btn-Achats {
+    margin-top: 10px;
+}
+
+.border-gris {
+    border: 1px solid #090e1d22;
+    border-radius: 10px;
+}
+
+.btn-Livraison {
+    margin-top: 10px;
+}
+
+.carte-reclam {
+    margin: 20px;
+}
+
+.Separate {
+    display: block;
+}
+
+.Formulaire {
+    background-color: white;
+    text-align: center;
+}
+
+.forme {
+    width: 100%;
+    max-width: 100%;
+}
+
+.formInscru {
+    padding: 50px;
+}
+
+.btn-conexion {
+    color: #090e1d89;
+    font-weight: bold;
+}
+
+.btn-conexion:hover {
+    color: #090e1dca;
+}
+
+.Legende {
+    font-size: medium;
+    text-align: end;
+}
+
+.Form-incription {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 50px;
+    color: rgba(50, 47, 48, 0.77);
+    font-size: large;
+    font-weight: bold;
+    border: 1px solid rgba(47, 47, 47, 0.13);
+}
+
+.Photo-de-profil {
+    border-radius: 20px;
+    max-width: 100%;
+}
+
+.info-profil {
+    padding-top: 100px;
+}
+
+.mes-infos {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    align-self: center;
+}
+
+.ma-description {
+    color: white;
+    font-size: large;
+}
+
+.ma-descrp {
+    max-width: 100%;
+}
+
+.img-illust {
+    max-width: 100%;
+    max-height: 100%;
+    width: 50%;
+    height: auto;
+}
+
+.Photo-profil {
+    align-self: start;
+    color: #322f30;
+    font-size: large;
+    font-weight: bold;
+    margin-right: 50px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid #2F2F2F;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.myArticle {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.photo-myAnnonce {
+    border-radius: 20px;
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 50px;
+}
+
+.img-user {
+    max-width: 100%;
+}
+
+.card-user {
+    margin: 50px;
+    border: 1px solid #090e1d36;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-user {
+    color: #090E1D;
+}
+
+.Info-profile {
+    margin-top: 20px;
+}
+
+.listeInfo {
+    color: #2F2F2F;
+    font-weight: 500;
+}
+
+.TitreInfo {
+    font-weight: bold;
+    color: #999999;
+}
+
+ul {
+    list-style: inside;
+
+}
+
+.InfoPrincipal {
+    align-self: center;
+}
+
+.Annonce {
+    padding: 20px;
+}
+
+.filter {
+    position: sticky;
+    top: 0;
+}
+
+.fa-annonce {
+    width: auto;
+    height: 100%;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    margin: 20px 50px;
+}
+
+.card .imgbox {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Largeur égale à 100% de la largeur de son bloc moins 20 pixel */
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Tout contenu dépassant de l'élément ciblé est caché */
+    overflow: hidden;
+    border-radius: 3px;
+    /* L'élément ciblé a une transition de 0,5 seconde pour tous ses changements de propriétés */
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover .imgbox {
+    width: 150px;
+    height: 150px;
+    left: -75px;
+    /* Décalage de la moitié de la hauteur de l'élément ciblé (75 pixels) vers le haut par rapport à sa position de base */
+    top: calc(50% - 75px);
+}
+
+
+.card .content {
+    right: 0;
+    position: absolute;
+    width: calc(100% - 75px);
+    height: 100%;
+    padding: 18px;
+}
+
+.card .content h5 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.card .content p {
+    font-size: 0.8em;
+}
+
+
+.card .content a {
+    display: inline-block;
+    font-size: 0.7rem;
+    margin-top: 10px;
+    border-radius: 3px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    background: #090e1d89;
+    background-size: 400%;
+    z-index: 1;
+}
+
+.Date {
+    color: #090E1Dd5;
+    font-size: small;
+}
+
+
+.card .content .Title-card {
+    color: #090e1d89;
+    text-transform: uppercase;
+}
+
+.form-create {
+    margin-bottom: 20px;
+}
+
+.select-spec {
+    margin-bottom: 10px;
+}
+
+.Back-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #090E1D;
+    width: 260px;
+    height: 300px;
+    transition: 0.5s;
+    border: 10px solid white;
+}
+
+.Back-img:hover {
+    width: 100%;
+    height: 350px;
+    transition: 0.5s;
+}
+
+.carte {
+    border-radius: 10px;
+    background-color: rgba(9, 14, 29, 0.19);
+    color: #ffffff;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.carte-left {
+    color: #090e1d7f;
+    padding: 20px;
+    align-self: center;
+}
+
+.carte-right {
+    align-self: center;
+}
+
+.carte-title {
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.carte-description {
+    margin-bottom: 4rem;
+}
+
+.carte-cta {
+    font-size: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #090e1dbe;
+    padding: 10px;
+}
+.carte-group {
+    padding: 20px;
+    text-align: center;
+}
+
+.img-annonce-recent {
+    width: 100%;
+
+}
+
+.blocLast {
+    margin-top: 50px;
+    border: 1px solid #090e1d1b;
+    padding: 20px;
+}
+
+.reclamLi {
+    font-weight: bold;
+    font-size: large;
+}
+
+#wrap:not target {
+    transform: translate3d(-335px, 0, 0);
+}
+
+#wrap:target {
+    transform: translate3d(0, 0, 0);
+}
+#hiddenBlock {
+    border: 1px solid #999999;
+}
+.infoVendeur:hover {
+    color: #090E1D;
+    font-weight: bold;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media screen and (max-width: 1415px) {
+    .LgPhoto {
+        max-width: 100%;
+    }
+
+    .btn-Achat {
+        margin-top: 0px;
+    }
+
+    .Img-ilustration {
+        text-align: center;
+    }
+
+    .Image-Voiture {
+        width: 100%;
+    }
+
+    .Deux-photo {
+        display: none;
+    }
+
+    .responsive-ColInfoRapide {
+        text-align: center;
+        display: block !important;
+        width: 100%;
+    }
+
+    .responsive-InfoRapide {
+        display: block !important;
+        width: 100%;
+    }
+
+    .InfoRapide {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .Livraison {
+        width: 100%;
+    }
+
+    .localisation-voiture {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .Condition-Livraison {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Carrouselle {
+        width: 60%;
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .Banniere-annonce {
+        display: none;
+        background-color: white;
+        margin: 50px;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .Categorie {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .Cat {
+        margin: 10px;
+    }
+
+    .Cat2 {
+        margin: 10px;
+    }
+
+    .Cat3 {
+        margin: 10px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .list {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+}

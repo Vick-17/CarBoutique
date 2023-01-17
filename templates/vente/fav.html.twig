@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <div class="corp">
+        <div class="Banniere-Actue">
+            <div class="banner-content">
+                <h2 class="Actu"> FAVORIES </h2>
+                <p>Toute les annonce que tu a sauvgarder</p>
+            </div>
+        </div>
+
+
+        <div class="Dernire-annonce">
+            <div class="container">
+                <div class="row">
+                    {% for favori in favoris %}
+                    <div class="row">
+                        <div class="col">
+                            <div class="description-Voiture">
+                                <div class="row InfoVoiture border-gris">
+                                    <div class="col box"><span class="bold">Titre</span><br>
+                                        {{ favori.title }}</div>
+                                    <div class="col box"><span class="bold">Prix</span><br>
+                                        {{ favori.price }}<br>
+                                    </div>
+                                    <div class="col box"><span class="bold">date de publication</span><br>
+                                        {{ favori.createdAt|date("d/m/Y") }}</div>
+                                    <div class="col box">
+                                        <a class="btn btn-success" href="{{ path('vente_show', {"id": favori.id}) }}">
+                                            Voir plus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="scrollUp">
+        <a href="#top"><img src="/img/to_top.png"/></a>
+    </div>
+{% endblock %}

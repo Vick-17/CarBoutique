@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> ANNONCE </h2>
+      <p>Toute les voiture disponible a la vente</p>
+    </div>
+  </div>
+  
+  
+
+  <div class="Dernire-annonce">
+  <div class="container">
+    <h2>Dernière Annonces</h2>
+    <div class="row">
+      {% for annonce in annonces %}
+      <div class="row">
+        <div class="col">
+          <div class="description-Voiture">
+            <div class="row InfoVoiture border-gris">
+              <div class="col box"> <span class="bold">Titre</span><br>
+                {{ annonce.title }}</div>
+              <div class="col box"> <span class="bold">Marque</span><br>
+                {{ annonce.marque }}</div>
+              <div class="col box"><span class="bold">Modèle</span><br>
+                {{ annonce.modele }}<br>
+              </div>
+              <div class="col box"><span class="bold">Publication</span><br>
+                {{ annonce.createdAt|date("d/m/Y") }}</div>
+              <div class="col box">
+                <a class="btn btn-success" href="{{ path('vente_show', {"id": annonce.id}) }}"> Voir plus</a>
+              </div>
+              <div class="col box">
+                <a href="{{ path('blog_delete', {"id": annonce.id}) }}">
+                  <button type="button" class="btn btn-danger">Suprimmer</button>
+                </a>
+              </div>
+              <div class="col box">
+                <a href="{{ path('blog_edit', {"id": annonce.id}) }}">
+                  <button type="button" class="btn btn-warning">Modifier</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    </div>
+  </div>
+  </div>
+  <div id="scrollUp">
+    <a href="#top"><img src="/img/to_top.png" /></a>
+  </div>
+  {% block javascripts %}
+  <script src="/script.js"></script>
+  {% endblock %}
+  {% endblock %}

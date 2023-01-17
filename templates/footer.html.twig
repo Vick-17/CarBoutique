@@ -1,0 +1,53 @@
+<div class="footer">
+  <div class="container">
+    <div class="row top-Footer">
+      <div class="col-6 Titre-Footer">
+        <h2 class="footer-title">Car boutique.Fr</h2>
+        <p>Car-boutique.com est un site de vente de voitures entre particuliers. 
+        Il offre aux utilisateurs la possibilité de vendre ou d'acheter des voitures d'occasion en ligne. 
+         Les utilisateurs peuvent également publier des 
+        annonces gratuitement et contacter les vendeurs directement pour obtenir plus d'informations sur les voitures en vente. 
+        Car-boutique.com est un moyen pratique et facile de vendre ou d'acheter une voiture d'occasion.</p>
+        <div class="row icon-social">
+          <div class="col">
+            <img src="/img/twitter.png" alt="social-icon" class="social-icon">
+            <img src="/img/facebook.png" alt="social-icon" class="social-icon">
+            <img src="/img/instagram.png" alt="social-icon" class="social-icon">
+            <img src="/img/youtube.png" alt="social-icon" class="social-icon">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="row">
+          <div class="col">
+            <h5 class="ulliste"> Shop </h5>
+            <ul>
+              <li><a class="over-blanc liste" href="{{ path('App_Recent') }}" class="Nav-bar-header" >Recents</a></li>
+              <li><a class="over-blanc liste" href="{{ path('liste_Voitures') }}" class="Nav-bar-header" >Annonce</a></li>
+              <li><a class="over-blanc liste" href="{{ path('vente_Categorie') }}" class="Nav-bar-header" >Catégorie</a></li>
+              {% if app.user %}
+              <li><a class="over-blanc liste" href="{{ path('blog_create') }}" class="Nav-bar-header" >Mise en ligne</a></li>
+          {% else %}
+              <li><a class="over-blanc liste href="{{ path('app_login') }}" class="Nav-bar-header" >Mise en ligne</a></li>
+          {% endif %}
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <h5 class="ulliste"> Companie </h5>
+              <li><a class="over-blanc liste" href=" {{ path('App_propos') }}" class="Nav-bar-header">A propos</a></li>
+              <li><a class="over-blanc liste" href="" class="Nav-bar-header">Actualité</a></li>
+              <li><a class="over-blanc liste" href=" {{ path('App_contact') }}" class="Nav-bar-header">Nous contacter</a></li>
+              <li><a class="over-blanc liste" href="{{ path('App_faq') }}" class="Nav-bar-header">FAQ</a></li>
+              <li class="over-blanc liste">Terms & Conditions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row Copy">
+  <div class="col Copyright">© All Rights Reserved. Powered by Car Boutique.fr </div>
+</div>
+<script src="/script.js"></script>

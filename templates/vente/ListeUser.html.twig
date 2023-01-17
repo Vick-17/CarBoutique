@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="Banniere-Actue">
+  <div class="banner-content">
+    <h2 class="Actu"> Liste d'utilisateur </h2>
+    <p>Gérer vos utilisteur</p>
+  </div>
+  <div class="container">
+    <div class="row">
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+  {% for User in Users %}
+    <div class="col card-user">
+      <div>
+        <img src="{{ User.photo }}" class="img-user" alt="{{ User.photo }}">
+        <h5 class="user-title">{{ User.name }}, {{User.lastname}} </h5>
+        <ul>
+          <li class="info-user">{{ User.email }}</li>
+          <li class="info-user">{{ User.phoneNumber }}</li>
+          <li class="info-user">{{ User.adresse }}</li>
+        </ul>
+        <a href="{{ path('App_ProfilUser', {"id": User.id}) }}"><button type="button" class="btn btn-success">Voir le profil</button></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

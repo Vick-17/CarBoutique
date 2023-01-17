@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car boutique.fr{% endblock %}
+
+{% block body %}
+<div class="corp">
+    <div class="Banniere-Actue">
+        <div class="banner-content">
+            <h2 class="Actu"> Categorie </h2>
+            <p>Choisiser le type de vehicule qui vous conviens</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="Voiture-Perso">
+            <h5>Chercher la voiture qui vous convient le mieux</h5>
+            <div class="row Categorie">
+                {% for type in types %}
+                <div class="col hidden"><a href="{{ path('vente_listCat', {"id": type.id}) }}">
+                        <div class="Cat" style="background-image: url({{ type.image }});">
+                            <h5 class="title-cat">{{ type.vehiculetype }}</h5>
+                        </div>
+                    </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+{% endblock %}

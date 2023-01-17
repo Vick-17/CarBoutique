@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formArticle 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> Mise en ligne </h2>
+      <p>Vendez votre voiture</p>
+    </div>
+  </div>
+    <div class="container" style="margin-top: 50px;">
+        <h1> Création d'une annonce !</h1>
+        {{ form_start(formArticle) }}
+
+
+
+        <div class="form-create"> {{ form_widget(formArticle.title, {'attr': {'placeholder': "Titre de l'annonce"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.imageFile, {'attr': {'placeholder': "ajouter une image"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.imageFiled, {'attr': {'label': "ajouter une deuxieme image"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.imageFilet, {'attr': {'label': "ajouter une troisieme image"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.price, {'attr': {'placeholder': "ajouter un prix"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.Annee, {'attr': {'placeholder': "Années de mise en circulation"}}) }}</div>
+        
+        <div class="form-create">{{ form_widget(formArticle.km, {'attr': {'placeholder': "Killometrage"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.puissancecv, {'attr': {'placeholder': "Puissance en CV"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.puissancedin, {'attr': {'placeholder': "Chevaux fiscaux"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.description, {'attr': {'placeholder': "Resumer votre vente"}}) }}</div>
+
+        <div class="form-create">{{ form_widget(formArticle.DescriptionLongue, {'attr': {'placeholder': "Decriver votre voiture"}}) }}</div>
+
+
+
+
+        <div class="row">
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.marque) }}
+            </div>
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.modele, {'attr': {'placeholder': "Choix du modele"}}) }}
+            </div>
+                        <div class="col-2 select-spec">
+                {{ form_widget(formArticle.type, {'attr': {'placeholder': "Type"}}) }}
+            </div>
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.transmission, {'attr': {'placeholder': "Choix du modele"}}) }}
+            </div>
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.energie, {'attr': {'placeholder': "Choix du modele"}}) }}
+            </div>
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.porte, {'attr': {'placeholder': "Choix du modele"}}) }}
+            </div>
+            <div class="col-2 select-spec">
+                {{ form_widget(formArticle.place, {'attr': {'placeholder': "Choix du modele"}}) }}
+            </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-success ">
+        {% if editMode %}
+        Enregistrer
+        {% else %}
+        Ajouter l'article
+        {% endif %}
+    </button>
+    {{ form_end(formArticle) }}
+
+</div>
+</div>
+{% endblock %}

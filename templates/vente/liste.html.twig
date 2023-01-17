@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> ANNONCE </h2>
+      <p>Toute les voiture disponible a la vente</p>
+    </div>
+  </div>
+  <div class="container">
+    {{ form_start(form) }}
+    <div class="row Search-filter">
+      <div class="col-11">
+        {{ form_widget(form.mots)}}
+      </div>
+      <div class="col">
+        {{ form_widget(form.Recherche) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.marque) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.modele, {'attr': {'placeholder': "Choix du modele"}}) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.type, {'attr': {'placeholder': "Type"}}) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.transmission, {'attr': {'placeholder': "Choix du modele"}}) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.energie, {'attr': {'placeholder': "Choix du modele"}}) }}
+      </div>
+      <div class="col-2 select-spec">
+        {{ form_widget(form.place, {'attr': {'placeholder': "Choix du modele"}}) }}
+      </div>
+    </div>
+    {{ form_end(form) }}
+
+  </div>
+  <div class="container">
+    <div class="Dernire-annonce">
+      <h2>Toute les annonces</h2>
+      <div class="row">
+        {% for articlevoiture in articlevoitures %}
+        <div class="col-4 hidden">
+          <div class="card">
+            <div class="imgbox">
+              <img class="fa-annonce" src="{{ vich_uploader_asset(articlevoiture, 'imageFile') }}" alt="tof-annonce">
+            </div>
+            <div class="content">
+              <h3 id="Title-card">{{ articlevoiture.marque }}</h3>
+              <h3 id="Title-card"> {{ articlevoiture.modele }} </h3>
+              <span class="Date">{{ articlevoiture.createdAt | date('d/m/Y') }} à
+                {{ articlevoiture.createdAt | date('H:i') }}</span>
+              <a href="{{ path('vente_show', {"id": articlevoiture.id}) }}"> Voir plus</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  <div id="scrollUp">
+    <a href="#top"><img src="/img/to_top.png" /></a>
+  </div>
+</div>
+{% endblock %}

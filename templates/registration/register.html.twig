@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme registrationForm 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+    <div class="Banniere-Actue">
+        <div class="banner-content">
+            <h2 class="Actu"> INSCRIPTION </h2>
+            <p>Inscriver vous pour mettre en ligne une annonce </p>
+            </button>
+        </div>
+    </div>
+<div class="container">
+    {% for flash_error in app.flashes('verify_email_error') %}
+    <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <div class="Form-incription">
+        <h1>Inscription</h1>
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.name, {
+            label: 'Votre Nom'
+        }) }}
+        {{ form_row(registrationForm.lastname, {
+            label: 'Votre prenom'
+        }) }}
+        {{ form_row(registrationForm.phoneNumber, {
+            label: 'Numéro de téléphone*'
+        }) }}
+        {{ form_row(registrationForm.adresse, {
+            label: 'Adresse*'
+        }) }}
+        {{ form_row(registrationForm.photo, {
+            label: 'Photo de profil*'
+        }) }}
+        {{ form_row(registrationForm.email, {
+            label: 'Adresse Email'
+        }) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            label: 'Accépter les conditions d\'utilisation'
+        }) }}
+
+        <button type="submit" class="btn btn-success">Inscription</button>
+        {{ form_end(registrationForm) }}
+        <div class="Legende"> * = Optionel</div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car boutique.fr{% endblock %}
+
+{% block body %}
+<div class="corp">
+    <div class="Banniere-Actue">
+        <div class="banner-content">
+            <h2 class="Actu"> ACTIVITÉ RÉCENTE </h2>
+            <p>Toute les annonce, incription, et ajout a la base de données recents</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row blocLast">
+            <h3> Les dernière annonces </h3>
+            {% for annonce in annonces %}
+            <div class="col-6">
+                <div class="row carte">
+                    <div class="col carte-left">
+                        <h2 class="carte-title"> {{ annonce.title }} </h2>
+
+                        <p class="carte-description"> {{ annonce.description }} </p>
+                        <a class="carte-cta" href="{{ path('vente_show', {"id": annonce.id}) }}"> Voir plus</a>
+                    </div>
+                    <div class="col carte-right">
+                        <div class="carte-group">
+                            <img class="img-annonce-recent" src="{{ vich_uploader_asset(annonce, 'imageFile') }}" alt="Voiture">
+                            <span class="carte_stat-name"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row blocLast">
+            <h3> Les dernière inscription </h3>
+            {% for user in users %}
+            <div class="col-6">
+                <div class="row carte">
+                    <div class="col carte-left">
+                        <h2 class="carte-title"> {{ user.name }} </h2>
+
+                        <p class="carte-description"> {{ user.lastname }} </p>
+                    </div>
+                    <div class="col carte-right">
+                        <div class="carte-group">
+                            <img class="img-annonce-recent" src="{{ user.photo }}">
+                            <span class="carte_stat-name"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="row blocLast">
+            <h3> Les dernier ajout a la bdd </h3>
+            {% for modele in modeles %}
+            <div class="row">
+                <div class="col">
+                    <div class="description-Voiture">
+                        <div class="row AjoutBdd border-gris">
+                            <div class="col box"> <span class="bold">Modele</span><br>
+                                {{ modele.name }}</div>
+                            <div class="col box"> <span class="bold">Marque</span><br>
+                                {{ modele.marque }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+                {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

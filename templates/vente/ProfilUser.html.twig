@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Decentral{% endblock %}
+{% block body %}
+    <div class="corp">
+        <div class="Banniere-Actue">
+            <div class="banner-content">
+                <h2 class="Actu"> Mon profil </h2>
+                <p>Gérer votre profil</p>
+            </div>
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row info-profil">
+                <div class="col-3 Photo-profil">
+                    <img src="{{ InfoUsers.Photo }}" class="Photo-de-profil" alt="photo de profil">
+                    <div class="Info-profile">
+                        <ul>
+                            <li class="listeInfo"><span class="TitreInfo">Nom,Prenom :</span><br> {{ InfoUsers.name }}
+                                , {{ InfoUsers.lastname }}</li>
+                            <li class="listeInfo"><span class="TitreInfo">Adresse :</span><br> {{ InfoUsers.adresse }}
+                            </li>
+                            <li class="listeInfo"><span class="TitreInfo">Email :</span><br> {{ InfoUsers.email }}</li>
+                            <li class="listeInfo"><span
+                                        class="TitreInfo">Téléphone :</span><br> {{ InfoUsers.phoneNumber }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col mes-articles">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        {% for myArticle in myArticles %}
+                            <div class="accordion-item" style="padding: 20px">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                            aria-controls="flush-collapseOne">
+                                        {{ myArticle.title }}
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <img src="{{ vich_uploader_asset(myArticle, 'imageFile') }}"
+                                         class="photo-myAnnonce" alt="annonce">
+                                    <div class="accordion-body">{{ myArticle.description }}</div>
+                                    <br>
+                                    {{ myArticle.createdAt | date('d/m/Y') }} à
+                                    {{ myArticle.createdAt | date('H:i') }}
+                                    <a href="{{ path('blog_delete', {"id": myArticle.id}) }}">
+                                        <button type="button" class="btn btn-danger" style="margin-left: 10px;">
+                                            Suprimmer ?
+                                        </button>
+                                    </a>
+                                    <a href="{{ path('blog_edit', {"id": myArticle.id}) }}">
+                                        <button type="button" class="btn btn-success" style="margin-left: 10px;">
+                                            Modifier ?
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

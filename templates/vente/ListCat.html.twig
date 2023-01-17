@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car boutique.fr{% endblock %}
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> Categorie </h2>
+      <p>Choisiser le type de vehicule qui vous conviens</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for type in types %}
+      <div class="col-4 hidden">
+        <div class="card">
+          <div class="imgbox">
+            <img class="fa-annonce"
+          src="{{ vich_uploader_asset(type, 'imageFile') }}" alt="Voiture">
+          </div>
+          <div class="content">
+            <h3 id="Title-card">{{ type.marque }}</h3>
+            <h3 id="Title-card"> {{ type.modele }} </h3>
+            <span class="Date">{{ type.createdAt | date('d/m/Y') }} à
+              {{ type.createdAt | date('H:i') }}</span>
+            <a href="{{ path('vente_show', {"id": type.id}) }}"> Voir plus</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

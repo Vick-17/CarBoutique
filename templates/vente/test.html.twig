@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Decentral{% endblock %}
+{% block body %}
+{% for type in types %}
+                <a href=""><div class="col Cat">
+                    <h5>{{ type.vehiculetype }}</h5>
+                </div></a>
+                <a href="{{ path('vente_listCat', {"id": type.id}) }}"> Voir plus</a>
+            {% endfor %}
+{% endblock %}  
+
+

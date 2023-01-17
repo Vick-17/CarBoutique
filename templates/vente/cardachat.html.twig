@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="corp">
+  <div class="Banniere-Actue">
+    <div class="banner-content">
+      <h2 class="Actu"> Annonce </h2>
+      <p>Consulter une annonce</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row Image-Voiture">
+      <div class="col Img-ilustration"><img class="LgPhoto"
+          src="{{ vich_uploader_asset(articlevoitures, 'imageFile') }}" alt="Voiture"></div>
+      <div class="col Deux-photo"><img class="TopPhoto" src="{{ vich_uploader_asset(articlevoitures, 'imageFiled') }}"
+          alt="Voiture"><br>
+        <img class="PngPhoto" src="{{ vich_uploader_asset(articlevoitures, 'imageFilet') }}" alt="Voiture"></div>
+      <div class="col InfoRapide border-gris">
+        <p>
+          <h4 class="_14">{{ articlevoitures.title }}</h4>
+          <h4 class="_14" style="font-size:large;">{{ articlevoitures.price }}</h4>
+        </p>
+        <br>
+        {% if app.user %}
+        <a href="{{ path('app_fav', {"id": articlevoitures.id}) }}" class="btn btn-primary">Ajouter au favori</a>
+          <button class="btn btn-success" style="margin-top: 20px;" id="revealButton">Contacter le vendeur</button>
+
+          <div id="hiddenBlock" style="margin-top: 10px;">
+            <a class="infoVendeur" href="mailto:{{ articlevoitures.user.email }}"> {{ articlevoitures.user.email }}</a><br>
+            <a class="infoVendeur" href="tel: +33{{ articlevoitures.user.phoneNumber }}"> {{ articlevoitures.user.phoneNumber }}</a>
+          </div>
+        {% else %}
+        connecter vous pour Reserver çe vehicule
+        <a href="{{ path('app_login') }}"><button type="button" class="btn btn-danger"> conexion </button></a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="description-Voiture">
+      <div class="row InfoVoiture border-gris">
+        <div class="col box"> <span class="bold">Marque</span><br>
+          {{ articlevoitures.marque }}</div>
+        <div class="col box"><span class="bold">Modèle</span><br>
+          {{ articlevoitures.modele }}<br>
+        </div>
+        <div class="col box"><span class="bold">Année</span><br>
+          {{ articlevoitures.annee }}</div>
+        <div class="col box"><span class="bold">Km</span><br>
+          {{ articlevoitures.km }}</div>
+        <div class="col box"><span class="bold">Energie</span><br>
+          {{ articlevoitures.energie }}</div>
+        <div class="col box"><span class="bold">transmission</span><br>
+          {{ articlevoitures.transmission }}</div>
+        <div class="col box"><span class="bold">Type</span><br>
+          {{ articlevoitures.type }}</div>
+        <div class="col box"> <span class="bold">Nbr de porte</span><br>
+          {{ articlevoitures.porte }}</div>
+        <div class="col box"><span class="bold">Nbr de place</span><br>
+          {{ articlevoitures.place }}</div>
+        <div class="col box"><span class="bold">Puissance Cv</span><br>
+          {{ articlevoitures.puissancecv }}</div>
+        <div class="col box"><span class="bold">Puissance DIN</span><br>
+          {{ articlevoitures.puissancedin }}</div>
+      </div>
+    </div>
+    <div class="descr-Voiture">
+      <div class="row border-gris">
+        <div class="col-6 Description">
+          <h4 class="_14">Description du vehicule</h4>
+          <br>
+          {{ articlevoitures.DescriptionLongue | raw }}
+        </div>
+        <div class="col Description">
+          <p>
+          <h4 class="_14">Resumer de la vente</h4>
+          <br>
+            {{ articlevoitures.description | raw }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row Livraison-Recherche border-gris">
+      <div class="col localisation-voiture">
+        <h4 class="_14">Localisation</h4>
+        <br>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14675.034389067616!2d1.153780074932567!3d49.44285967027942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0df638ed98f89%3A0xad2f11b75b79afaf!2sGrand%20Frais%20Rouen!5e0!3m2!1sfr!2sfr!4v1666162592928!5m2!1sfr!2sfr"
+          width="100%" height="80%" style="border-radius: 20px;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+    <div id="scrollUp">
+    <a href="#top"><img src="/img/to_top.png" /></a>
+  </div>
+</div>
+{% endblock %}

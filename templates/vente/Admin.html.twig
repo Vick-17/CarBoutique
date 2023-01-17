@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="Banniere-Actue">
+        <div class="banner-content">
+            <h2 class="Actu"> Administration </h2>
+            <p>Gérer votre site</p>
+        </div>
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col listSite">
+                <div>
+                    <a href="{{ path('App_UserListe') }}">
+                        <img class="imgListProfil" src="/img/profilpc.png" alt="profilpc">
+                        <h3>Liste des utilisateur</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col listSite">
+                <div>
+                    <a href="{{ path('App_AnnAdmin') }}">
+                        <img class="imgListProfil" src="/img/annonce.png" alt="profilpc">
+                        <h3>Liste des Annonces</h3>
+                    </a>
+                </div>
+            </div>
+            <div class="col listSite">
+                <a href="{{ path('App_reclam') }}">
+                    <img class="imgListProfil" src="/img/lettre.jpg" alt="profilpc">
+                    <h3>Message et reclamation</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
